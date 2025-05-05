@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\UmurController;
+use App\Http\Middleware\UmurMiddleware;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -74,6 +75,8 @@ Route::resource('kategori', KategoriController::class); //khusus untuk crud
 Route::get('report/kategori', [KategoriController::class, 'report'])->name('kategori.report');
 
 // umur
-Route::get('form', [UmurController::class, 'form'])->name('umur.form');
+Route::get('form', [UmurController::class, 'form'])->name('umur.form'); //halaman form
+Route::get('sukses', [UmurController::class, 'sukses'])->name('sukses.form'); //halaman sukses
+Route::post('proses', [UmurController::class, 'proses_umur'])->name('umur.proses'); //memproses input
 
 

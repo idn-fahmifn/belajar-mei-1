@@ -10,7 +10,8 @@
     <h1>Form Cek Umur</h1>
     <p>Masukan umur kamu dibawah ini : </p>
 
-    <form action="">
+    <form action="{{route('umur.proses')}}" method="post">
+        @csrf
         <div class="">
             <label for="">Nama Lengkap</label>
             <input type="text" name="nama" required>
