@@ -11,5 +11,10 @@ class BarangController extends Controller
         return 'Ini adalah output index barang';
     }
 
-    
+    public function create()
+    {
+        return 'Ini adalah output create barang';
+    }
+
+
 }

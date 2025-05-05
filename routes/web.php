@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KategoriController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -64,3 +65,8 @@ Route::prefix('training')->group(function(){
 
 
 Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
+Route::get('barang/create', [BarangController::class, 'create'])->name('barang.create');
+
+
+// Route dengan resource
+Route::resource('kategori', KategoriController::class);
