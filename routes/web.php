@@ -69,4 +69,6 @@ Route::get('barang/create', [BarangController::class, 'create'])->name('barang.c
 
 
 // Route dengan resource
-Route::resource('kategori', KategoriController::class);
+Route::resource('kategori', KategoriController::class); //khusus untuk crud
+Route::get('report/kategori', [KategoriController::class, 'report'])->name('kategori.report');
+

@@ -61,4 +61,10 @@ class KategoriController extends Controller
     {
         //
     }
+
+    public function report()
+    {
+        return 'ini halaman report kategori';
+    }
+
 }
