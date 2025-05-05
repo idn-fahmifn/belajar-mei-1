@@ -15,6 +15,19 @@ class UmurMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+
+        // mengambil key yang disimpan di session controller
+        $umur = $request->session()->get('umur');
+
+        if($umur >= 18)
+        {
+            return $next($request);
+        }
+        
+        // handle jika tidak memenuhi
+        return redirect()->route('umur.form')->with('error', 'Anda belum memenuhi syarat');
+
+
+        
     }
 }

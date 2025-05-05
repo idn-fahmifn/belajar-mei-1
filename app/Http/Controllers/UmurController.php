@@ -24,8 +24,11 @@ class UmurController extends Controller
             'umur' => 'required|integer|min:1|max:60'
         ]);
 
-        return redirect()->route('sukses.form');
+        // menyimpan data sementara
+        $request->session()->put('umur', $request->umur);
 
+        // mengarahkan ke halaman sukses jika memenuhi syarat validator
+        return redirect()->route('sukses.form');
     }
 
 }
