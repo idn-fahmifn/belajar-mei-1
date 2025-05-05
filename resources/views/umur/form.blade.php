@@ -13,12 +13,12 @@
     <form action="">
         <div class="">
             <label for="">Nama Lengkap</label>
-            <input type="text" name="nama">
+            <input type="text" name="nama" required>
         </div>
 
         <div class="">
             <label for="">Umur</label>
-            <input type="number" name="umur">
+            <input type="number" name="umur" required>
         </div>
 
         <div class="">

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\UmurController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -71,4 +72,8 @@ Route::get('barang/create', [BarangController::class, 'create'])->name('barang.c
 // Route dengan resource
 Route::resource('kategori', KategoriController::class); //khusus untuk crud
 Route::get('report/kategori', [KategoriController::class, 'report'])->name('kategori.report');
+
+// umur
+Route::get('form', [UmurController::class, 'form'])->name('umur.form');
+
 
