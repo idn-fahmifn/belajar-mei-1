@@ -13,5 +13,9 @@
     <p>Materi route</p>
 
     <p>Saya ingin menampilkan parameter : {{$nilai}} </p>
+
+    <a href="{{route('hallo-get')}}" class="">Pergi ke halaman hallo</a>
+
+
 </body>
 </html>
