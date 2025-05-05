@@ -10,6 +10,10 @@
     <h1>Form Cek Umur</h1>
     <p>Masukan umur kamu dibawah ini : </p>
 
+    @if (session('error'))
+        <span>{{session('error')}}</span>
+    @endif
+
     <form action="{{route('umur.proses')}}" method="post">
         @csrf
         <div class="">
