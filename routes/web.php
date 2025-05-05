@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,7 +12,7 @@ Route::get('hallo', function(){
     return 'Hallo, saya sedang belajar Laravel';
 })->name('hallo-get');
 
-Route::post('hallo', function(){
+Route::post('hallo', action: function(){
     return 'Hallo, saya sedang belajar Laravel';
 })->name('hallo-post');
 
@@ -46,16 +47,20 @@ Route::get('contoh/{merek}', function($param){
 // Routes group
 Route::prefix('training')->group(function(){
 
-    Route::get('laravel', function(){
-        return 'Ini adalah kelas laravel ';
-    })->name('kelas.laravel');
+    Route::get('laravel/{param}', function($param){
+        return 'Ini adalah kelas laravel level '.$param;
+    })->name('kelas.laravel'); 
+    //compact digunakan untuk callback variable yng sudah di didefinisikan agar bisa dibaca oleh halaman.
 
-    Route::get('ccna', function(){
-        return 'Ini adalah kelas ccna ';
+    Route::get('ccna/{param}', function($param){
+        return 'Ini adalah kelas ccna level '.$param;
     })->name('kelas.ccna');
 
-    Route::get('mtcna', function(){
-        return 'Ini adalah kelas mtcna ';
+    Route::get('mtcna/{param}', function($param){
+        return 'Ini adalah kelas mtcna level '.$param;
     })->name('kelas.mtcna');
 
 });
+
+
+Route::get('barang', [BarangController::class, 'index'])->name('barang.index');
