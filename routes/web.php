@@ -77,7 +77,7 @@ Route::get('report/kategori', [KategoriController::class, 'report'])->name('kate
 // umur
 Route::get('form', [UmurController::class, 'form'])->name('umur.form'); //halaman form
 
-Route::get('sukses', [UmurController::class, 'sukses'])
+Route::get('sukses', [App\Http\Controllers\UmurController::class, 'sukses'])
 ->name('sukses.form')->middleware(UmurMiddleware::class); //halaman sukses
 
 Route::post('proses', [UmurController::class, 'proses_umur'])->name('umur.proses'); //memproses input
